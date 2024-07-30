@@ -1,0 +1,53 @@
+function digitalRead(pin);
+
+- Reads the value from a specified digital pin, either HIGH or LOW. Return HIGH or LOW
+- pin: the Arduino pin number you want to read
+
+
+###################################################################################################################################
+
+whle loop 
+
+currentMillis = millis()
+
+    declare son affichage -> Pue du cul 
+    IF  aucune led turn On ou que la led n'est pas allumée depuis plus de x temps
+            -> Change la led allumée, reinitialise last incorrect button press. 
+            -> allume la Nouvelle led et redemarre son timer
+
+    Foret de IF ELSE IF ...
+
+    IF LE button pressé est le meme que la led allumée 
+        -> Eteindre la led
+        -> digitalWrite(signalX, LOW)
+        -> Gagne 1 poitn 
+        -> Affiche le nouveau score
+        -> digitalWrite(signalX, HIGH)
+        -> led choisi devient 0 (aka pas de led choisi)
+    
+    ELSE IF Le button pressé est different de la led alluméé
+        -> Verifier temps ecoule entre le dernire appui d'un mauvais button et plus grand que Xtimer
+        -> IF point > 5
+            -> Enleve 5 point
+        -> ELSE 
+            -> Point = 0
+        -> changer timer dernier button incorrect 
+        -> afficher le nouveau score 
+
+-> Fin du jeu 
+    -> Eteind toutes les led 
+    -> Regarder si score superieur a HighScore 
+    -> WHILE LOOP Afficher score pendant 5 sec 
+        -> IF score >= HighScore
+            -> Fait clignoté l'ecran
+        -> Affichele score comme pendant jeu
+    -> Remettre les point a 0
+    ->refreshdisplay
+    ->affiche les scores
+
+Il a une function Allumer led qui est pas bonne 
+
+
+###############################################################
+
+Can't test now because error from include.
